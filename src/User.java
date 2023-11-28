@@ -1,11 +1,17 @@
 public class User {
-
+ private static User db;
+    public static User getDb(){
+        if(db == null){
+            db = new User();
+            db.name="Marco";
+            db.age=23;
+        }
+        return db;
+    }
     private String name;
     private int age;
 
-    User(String name, int age) {
-        this.name = name;
-        this.age = age;
+    User() {
     }
 
     private String getName() {
